@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Модели в Django</title>
+</head>
+ <body>
+  
+
+{% extends 'basesmy.html'%}
+
+{% block page%}
+
+<hr>
+<div class="container">
+<form method="POST">
+     {% csrf_token %}
+     {{ place_form.as_p }}
+    
+     <button type="submit" name="submit" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">save</font></font></button>
+ 
+</form>
+</div>
+{% comment %} <a class='btn btn-olg btn-warning' href="{% url 'edit-place' postingo.id %}">изменить</a>
+<a class='btn btn-olg btn-danger' href="{% url 'del_place' postingo.id %}">Удалить</a> {% endcomment %}
+{% endblock page%}
+</body>
+</html>

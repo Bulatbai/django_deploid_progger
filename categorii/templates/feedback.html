@@ -1,0 +1,13 @@
+{% extends 'basesmy.html'%}
+{% block page%}
+
+<form method="POST">
+    {% csrf_token %}
+    {{  form.as_p }}
+    <button>Save</button>
+{% comment %} {% for i in form.all%}
+{{i.text}} {% endcomment %}
+
+
+{% comment %} {% endfor%} {% endcomment %}
+{% endblock %} 
