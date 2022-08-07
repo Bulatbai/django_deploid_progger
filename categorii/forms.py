@@ -1,5 +1,6 @@
 
 
+from dataclasses import fields
 from django import forms
 from .models import Post, Comments
 from django.contrib.auth.forms import UserCreationForm
@@ -9,7 +10,7 @@ class Postforms(forms.ModelForm):
     
     class Meta:
         model = Post
-        fields = ['name', 'location', 'description', 'img','price']
+        fields = ['user','name', 'location', 'description', 'img','price']
 
 
 
@@ -30,7 +31,20 @@ class LetRegisterform(forms.ModelForm):
         return cd['password2']
         
             
- 
+# class CartAddProductForm(forms.ModelForm):
+#     class Meta:
+#         fields = ['name', 'price']
+
+
+
+PRODUCT_QUANTITY_CHOICES = [(i, str(i)) for i in range(1, 21)]
+
+
+class CartAddProductForm(forms.Form):
+    quantity = forms.TypedChoiceField(choices=PRODUCT_QUANTITY_CHOICES, coerce=int)
+    update = forms.BooleanField(required=False, initial=False, widget=forms.HiddenInput)
+
+
 
 
 class Coment_Form(forms.ModelForm):

@@ -374,7 +374,50 @@
         {% endfor %}    
      
 
-        
+
+
+        <li class="product type-product post-387 status-publish first instock product_cat-cake product_cat-fruit product_cat-vegetable product_tag-chocolate has-post-thumbnail shipping-taxable purchasable product-type-simple">
+          <div  class="single-products"   >  
+              <a href="" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">        
+             
+              </a>
+              <div class="products-image">    
+                  <a class="d-block" href="{% url 'place' i.id %}">
+                      {% if i.img%}
+                  <img width="350" height="350" src="{{i.img.url}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="" sizes="(max-width: 350px) 100vw, 350px"></a><ul class="product-btn-hover"><a href="" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+               {%endif%} 
+                 </a><li class="product-link"><a href="" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                          </a><a href="#" data-toggle="modal" data-target="#productsModalCenter387">
+                              <i class="fa fa-eye"></i>
+                          </a> 
+                      
+                      </li>
+                      <li><a href=""><i class="fa fa-link" aria-hidden="true"></i></a></li>
+                  </ul>
+              </div>
+      
+              <div class="products-content">
+                  <h3><a class="d-block" href="{% url 'place' i.id %}"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{i.name}}</font></font></a></h3>
+                  
+        <span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$</font></font></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{i.price}}</font></font></bdi></span></span>
+                             
+          <ul> 
+              <li><i class="fa fa-star-o"></i></li>
+              <li><i class="fa fa-star-o"></i></li>
+              <li><i class="fa fa-star-o"></i></li>
+              <li><i class="fa fa-star-o"></i></li>
+              <li><i class="fa fa-star-o"></i></li>
+          </ul>
+      
+       
+             <a href="?add-to-cart=387" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-btn" data-product_id="387" data-product_sku="" aria-label="Добавьте &quot;Шоколадный торт&quot; в корзину." rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Добавить в корзину</font></font></a> </div>
+                  </div>
+            </ul>
+       </li>
+         
+      {%endfor%}   
+       
+      
 </div>
   </div>
   </main>

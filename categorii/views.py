@@ -1,7 +1,7 @@
 
 from django.contrib.auth import authenticate
-from django.shortcuts import render, redirect, HttpResponse
-from .forms import   Postforms,  Coment_Form, LetRegisterform
+from django.shortcuts import render, redirect, HttpResponse,  get_object_or_404
+from .forms import   Postforms,  Coment_Form, LetRegisterform, CartAddProductForm
 from .import models
 from django.contrib.auth.mixins import    LoginRequiredMixin
 from .models import   Post, Comments, User  
@@ -9,7 +9,7 @@ from django.views import View
 from django.views.generic import TemplateView, FormView, DeleteView, CreateView
 from django.core.paginator import Paginator
 from django.http import HttpResponse, HttpResponseNotFound, Http404
-
+from django.views.decorators.http import require_POST
 
 # # class Homeview(View):
 # #     def get(self, request, *args, **kwargs):
@@ -19,12 +19,18 @@ from django.http import HttpResponse, HttpResponseNotFound, Http404
 # #     template_name = 'places/index.html'
 
 
+
+
+
+
+
 def autenticate(request):
     return render(request, 'registr.html')
 
 
 def kontact(request):
-    return render(request, 'kontact.html')
+    user_don = Post.objects.all()
+    return render(request, 'kontact.html', {'post': user_don})
 
 
 
@@ -34,9 +40,7 @@ def PLaces(request):
     return render(request, 'main.html', {'post': user_don})
 
 
-def bu_htm(request):
-    return render(request, 'by.html')
-
+ 
 
 
 
@@ -118,17 +122,7 @@ def delete_place(request, id):
 
 
 
-
-# # class Feedbackcreate(FormView):
-# #         template_name = 'feedback.html'
-# #         form_class = Feedbaclform 
-# #         success_url = '/'
-# #         # comentpla = Feedbaclform()
-
-# #         def form_valid(self, form):
-# #             form.save()
-# #             return super().form_valid(form)
-
+ 
 
  
 
@@ -166,3 +160,70 @@ def regist(request):
 
 
 
+def product_detail(request):
+    return render(request, 'detail.html')
+
+
+
+
+
+
+
+
+
+
+
+# @require_POST
+# def cart_add(request, product_id):
+#     cart = Post(request)
+#     product = get_object_or_404(Post, id=product_id)
+#     form = CartAddProductForm(request.POST)
+#     if form.is_valid():
+#         cd = form.cleaned_data
+#         cart.add(product=product,
+#                  quantity=cd['quantity'],
+#                  update_quantity=cd['update'])
+#     return redirect('cart:cart_detail')
+
+
+
+
+
+# def cart_detail(request):
+#     cart = Post(request)
+#     return render(request, 'cart/detail.html', {'cart': cart})
+
+
+
+
+
+
+
+# def cart_detail(request):
+#     cart = Post(request)
+#     return render(request, 'cart/detail.html', {'cart': cart})
+
+
+
+
+
+
+
+
+
+
+
+# def product_detail(request, id, slug):
+#     product = get_object_or_404(Post,
+#                                 id=id,
+#                                 slug=slug,
+#                                 available=True)
+#     cart_product_form = CartAddProductForm()
+#     return render(request, 'detail.html', {'product': product,
+#                                                         'cart_product_form': cart_product_form})
+
+
+
+
+
+                                                        

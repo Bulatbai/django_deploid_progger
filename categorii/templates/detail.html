@@ -193,6 +193,12 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
             
             
             
+
+
+
+
+
+
             
             
             
@@ -321,6 +327,22 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 			<i class="fa fa-shopping-cart"></i>
         </a>
     </div> -->
+
+
+
+
+
+ {% comment %} <p class="price">${{ product.price }}</p>
+<form action="{% url "cart:cart_add"  product.id %}" method="post">
+    {{ cart_product_form }}
+    {% csrf_token %}
+    <input type="submit" value="Add to cart">
+</form>  {% endcomment %}
+
+ {% comment %} <form action="{% url "cart:cart_add"  project.id %}" method="post">  {% endcomment %}
+
+
+
 
 	<script type="text/javascript">
 		(function () {
