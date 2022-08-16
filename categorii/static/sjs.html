@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+ 
+<html lang="zxx"><head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="/static/css/meanmenu.css">
+    <!-- Boxicons CSS -->
+    <link rel="stylesheet" href="/static/css/boxicons.min.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/static/css/flaticon.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="/static/css/nice-select.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <!-- Owl Carousel Default CSS -->
+    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+    <!-- Odometer CSS -->
+    <link rel="stylesheet" href="/static/css/odometer.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="/static/css/magnific-popup.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/static/css/responsive.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&amp;features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <title>Orgo - HTML-шаблон магазина органических фруктов и продуктов питания</title>
+
+    <link rel="icon" type="image/png" href="/static/img/favicon.png">
+</head>
+
+<body>
+
+<!-- Start Preloader Area -->
+<div class="preloader" style="display: none;">
+    <div class="preloader" style="display: none;">
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<div class="top-header-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <ul class="top-header-information">
+                    <li>
+                        <i class="bx bxs-map"></i>
+                        175 Премиальный район на 5-й авеню, Нью-Йорк
+                    </li>
+                    <li>
+                        <i class="bx bx-envelope"></i>
+                        <a href="mailto:hello@orgo.com">hello@orgo.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <ul class="top-header-social">
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="bx bxl-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="bx bxl-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="bx bxl-pinterest-alt"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="bx bxl-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar-area is-sticky">
+    <div class="main-responsive-nav">
+        <div class="container">
+            <div class="main-responsive-menu mean-container"><div class="mean-bar"><a href="#nav" class="meanmenu-reveal" style="background:;color:;right:0;left:auto;"><span><span><span></span></span></span></a><nav class="mean-nav">
+                    <ul class="navbar-nav" style="display: none;">
+                        <li class="nav-item">
+                            <a href="/ru/" class="nav-link">
+                                Домой
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="/ru/shop/" class="nav-link">
+                                Магазин
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/ru/blog/" class="nav-link">
+                                Блог
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/ru/contact/" class="nav-link active">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="others-options d-flex align-items-center">
+                        <div class="option-item">
+                            <div class="languages-list">
+                                <form action="/i18n/setlang/" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="CNZhiMqmi9pp6zeWWnCdbKblRidEVAKXMlRgg8JAVWTR9duxBL47mzSvZcZBTSxd">
+                                    <input name="next" type="hidden" value="">
+                                    <select name="language" onchange="this.form.submit()" style="display: none;">
+                                        
+                                        
+                                        
+                                        
+                                            <option value="ru" selected="">
+                                                Русский (ru)
+                                            </option>
+                                        
+                                            <option value="en">
+                                                English (en)
+                                            </option>
+                                        
+                                    </select><div class="nice-select" tabindex="0"><span class="current">
+                                                Русский (ru)
+                                            </span><ul class="list" style="display: none;"><li data-value="ru" class="option selected">
+                                                Русский (ru)
+                                            </li><li data-value="en" class="option mean-last">
+                                                English (en)
+                                            </li></ul></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="option-item">
+                            <div class="cart-btn">
+
+                                <a href="/ru/cart/">
+
+                                    <i class="flaticon-shopping-cart"></i>
+                                    <span>1</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="option-item">
+                            <form class="search-box" method="post" action="/ru/search/products/">
+                                <input type="hidden" name="csrfmiddlewaretoken" value="CNZhiMqmi9pp6zeWWnCdbKblRidEVAKXMlRgg8JAVWTR9duxBL47mzSvZcZBTSxd">
+                                <input type="text" class="form-control" placeholder="Поиск" name="search">
+                                <button type="submit"><i class="flaticon-search"></i></button>
+                            </form>
+                        </div>
+
+                        <div class="option-item">
+                            <div class="burger-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </nav></div>
+                <div class="logo">
+                    <a href="/ru/">
+                        <img src="/static/img/logo.png" alt="image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-navbar">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="/ru/">
+                    <img src="/static/img/logo.png" alt="image">
+                </a>
+
+                <div class="mean-push"></div><div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent" style="display: none;">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/ru/" class="nav-link">
+                                Домой
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="/ru/shop/" class="nav-link">
+                                Магазин
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/ru/blog/" class="nav-link">
+                                Блог
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/ru/contact/" class="nav-link active">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="others-options d-flex align-items-center">
+                        <div class="option-item">
+                            <div class="languages-list">
+                                <form action="/i18n/setlang/" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="CNZhiMqmi9pp6zeWWnCdbKblRidEVAKXMlRgg8JAVWTR9duxBL47mzSvZcZBTSxd">
+                                    <input name="next" type="hidden" value="">
+                                    <select name="language" onchange="this.form.submit()" style="display: none;">
+                                        
+                                        
+                                        
+                                        
+                                            <option value="ru" selected="">
+                                                Русский (ru)
+                                            </option>
+                                        
+                                            <option value="en">
+                                                English (en)
+                                            </option>
+                                        
+                                    </select><div class="nice-select" tabindex="0"><span class="current">
+                                                Русский (ru)
+                                            </span><ul class="list"><li data-value="ru" class="option selected">
+                                                Русский (ru)
+                                            </li><li data-value="en" class="option">
+                                                English (en)
+                                            </li></ul></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="option-item">
+                            <div class="cart-btn">
+
+                                <a href="/ru/cart/">
+
+                                    <i class="flaticon-shopping-cart"></i>
+                                    <span>1</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="option-item">
+                            <form class="search-box" method="post" action="/ru/search/products/">
+                                <input type="hidden" name="csrfmiddlewaretoken" value="CNZhiMqmi9pp6zeWWnCdbKblRidEVAKXMlRgg8JAVWTR9duxBL47mzSvZcZBTSxd">
+                                <input type="text" class="form-control" placeholder="Поиск" name="search">
+                                <button type="submit"><i class="flaticon-search"></i></button>
+                            </form>
+                        </div>
+
+                        <div class="option-item">
+                            <div class="burger-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="others-option-for-responsive">
+        <div class="container">
+            <div class="dot-menu">
+                <div class="inner">
+                    <div class="circle circle-one"></div>
+                    <div class="circle circle-two"></div>
+                    <div class="circle circle-three"></div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="option-inner">
+                    <div class="others-options d-flex align-items-center">
+                        <div class="option-item">
+                            <div class="languages-list">
+                                <select style="display: none;">
+                                    <option value="1">Eng</option>
+                                    <option value="2">Rus</option>
+                                </select><div class="nice-select" tabindex="0"><span class="current">Eng</span><ul class="list"><li data-value="1" class="option selected">Eng</li><li data-value="2" class="option">Rus</li></ul></div>
+                            </div>
+                        </div>
+
+                        <div class="option-item">
+                            <div class="cart-btn">
+                                <a href="/ru/cart/">
+                                    <i class="flaticon-shopping-cart"></i>
+                                    <span>1</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="option-item">
+                            <form class="search-box" method="post" action="/ru/search/products/">
+                                <input type="hidden" name="csrfmiddlewaretoken" value="CNZhiMqmi9pp6zeWWnCdbKblRidEVAKXMlRgg8JAVWTR9duxBL47mzSvZcZBTSxd">
+                                <input type="text" class="form-control" placeholder="Поиск" name="search">
+                                <button type="submit"><i class="flaticon-search"></i></button>
+                            </form>
+                        </div>
+
+                        <div class="option-item">
+                            <div class="burger-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sidebar-modal">
+    <div class="sidebar-modal-inner">
+        <div class="sidebar-about-area">
+            <div class="title">
+                <h2>О нас</h2>
+                <p>Мы считаем, что взаимодействие с брендом играет ключевую роль в коммуникации. Настоящие инновации и позитивный клиентский опыт являются основой успешного общения. Никаких поддельных товаров и услуг. Клиент - это король, его жизнь и потребности - это источник вдохновения.</p>
+            </div>
+        </div>
+
+
+        <div class="sidebar-contact-area">
+            <div class="contact-info">
+                <div class="contact-info-content">
+                    <h2>
+                        <a href="tel:+0881306298615">
+                            +088 130 629 8615
+                        </a>
+                        <span>OR</span>
+                        <a href="mailto:orgo@gmail.com">
+                            orgo@gmail.com
+                        </a>
+                    </h2>
+
+                    <ul class="social">
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="bx bxl-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="bx bxl-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="bx bxl-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="bx bxl-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="bx bxl-pinterest-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="bx bxl-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <span class="close-btn sidebar-modal-close-btn">
+                    <i class="flaticon-cancel"></i>
+                </span>
+    </div>
+</div>
+
+
+
+
+
+    <div class="page-banner-area item-bg4">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-banner-content">
+                        <h2>Contact</h2>
+                        <ul>
+                            <li>
+                                <a href="/ru/">Домой</a>
+                            </li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact-info-area pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="contact-info-box">
+                        <div class="icon">
+                            <i class="bx bx-envelope"></i>
+                        </div>
+
+                        <h3>Email Here</h3>
+                        <p><a href="mailto:hello@orgo.com">hello@orgo.com</a></p>
+                        <p><a href="mailto:support@orgo.com">support@orgo.com</a></p>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="contact-info-box">
+                        <div class="icon">
+                            <i class="bx bx-map"></i>
+                        </div>
+
+                        <h3>Location Here</h3>
+                        <p>2750 Quadra Street Victoria Road, New York, Canada</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="contact-info-box">
+                        <div class="icon">
+                            <i class="bx bxs-phone-call"></i>
+                        </div>
+
+                        <h3>Call Here</h3>
+                        <p><a href="tel:1234567890">+123 456 7890</a></p>
+                        <p><a href="tel:2414524526">+241 452 4526</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9476519598093!2d-73.99185268459418!3d40.74117737932881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a3f81d549f%3A0xb2a39bb5cacc7da0!2s175%205th%20Ave%2C%20New%20York%2C%20NY%2010010%2C%20USA!5e0!3m2!1sen!2sbd!4v1588746137032!5m2!1sen!2sbd"></iframe>
+    </div>
+
+
+
+    <section class="contact-area ptb-100">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Ready To Get Started?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua quis ipsum suspendisse</p>
+            </div>
+
+            <div class="contact-form">
+                <form method="post">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="CNZhiMqmi9pp6zeWWnCdbKblRidEVAKXMlRgg8JAVWTR9duxBL47mzSvZcZBTSxd">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label for="">First Name</label>
+                                <input type="text" name="first_name" class="form-control" maxlength="155" required="" id="id_first_name">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label for="">Last Name</label>
+                                <input type="text" name="last_name" class="form-control" maxlength="155" required="" id="id_last_name">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label for="">Your Email</label>
+                                <input type="text" name="email" class="form-control" maxlength="155" required="" id="id_email">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label for="">Your Phone</label>
+                                <input type="text" name="phone" class="form-control" required="" id="id_phone">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-group">
+                                <label for="">Your Subject</label>
+                                <input type="text" name="title" class="form-control" maxlength="155" required="" id="id_title">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-group">
+                                <label for="">Your Message</label>
+                                <textarea name="message" cols="40" rows="10" class="form-control" required="" id="id_message"></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <button type="submit" class="default-btn">
+                                Send Message
+                            </button>
+
+                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="newsletter-area ptb-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="newsletter-content">
+                        <h2>Subscribe To Our Newsletter</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua quis ipsum suspendisse</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <form method="post" action="/ru/contact/c/">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="CNZhiMqmi9pp6zeWWnCdbKblRidEVAKXMlRgg8JAVWTR9duxBL47mzSvZcZBTSxd">
+                        <input type="email" placeholder="Enter Email Address" name="email" required="" autocomplete="off">
+                        <button type="submit">Subscribe Now</button>
+
+                        <div id="validator-newsletter" class="form-result"></div>
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    
+
+
+
+
+
+<div class="footer-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-footer-widget">
+                    <div class="logo">
+                        <h2>
+                            <a href="/ru/">Orgo</a>
+                        </h2>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                    <ul class="social">
+                        <li>
+                            <a href="#" class="facebook" target="_blank">
+                                <i class="bx bxl-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="twitter" target="_blank">
+                                <i class="bx bxl-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pinterest" target="_blank">
+                                <i class="bx bxl-pinterest-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="linkedin" target="_blank">
+                                <i class="bx bxl-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-footer-widget pl-5">
+                    <h3>Быстрые ссылки</h3>
+
+                    <ul class="quick-links">
+                        <li>
+                            <a href="/ru/shop/">Магазин</a>
+                        </li>
+                        <li>
+                            <a href="/ru/blog/">Блог</a>
+                        </li>
+                        <li>
+                            <a href="/ru/faq/">Faq</a>
+                        </li>
+                        <li>
+                            <a href="/ru/contact/">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>Связаться с нами</h3>
+
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="bx bxs-phone"></i>
+                            <span>Телефон</span>
+                            <a href="tel:407409202288">(+40) 74 0920 2288</a>
+                        </li>
+                        <li>
+                            <i class="bx bx-envelope"></i>
+                            <span>Электронная почта</span>
+                            <a href="mailto:hello@orgo.com">hello@orgo.com</a>
+                        </li>
+                        <li>
+                            <i class="bx bx-map"></i>
+                            <span>Адрес</span>
+                            175 Премиальный район на 5-й авеню, Нью-Йорк, NY 10010, Соединенные Штаты
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="copyright-area">
+    <div class="container">
+        <div class="copyright-area-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <p>
+                        <i class="far fa-copyright"></i>
+                        Авторское право @2020 Orgo. Все права защищены
+                        <a href="https://envytheme.com/" target="_blank">
+                            EnvyTheme
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <ul>
+                        <li>
+                            <a href="/ru/terms-of-service/">Правила и Условия</a>
+                        </li>
+                        <li>
+                            <a href="/ru/pravicy-policy/">Политика конфиденциальности</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="go-top active">
+    <i class="bx bx-up-arrow-alt"></i>
+</div>
+
+<!-- End QuickView Modal Area -->
+
+<!-- Jquery Slim JS -->
+<script src="/static/js/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="/static/js/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="/static/js/bootstrap.min.js"></script>
+<!-- Meanmenu JS -->
+<script src="/static/js/jquery.meanmenu.js"></script>
+<!-- Nice Select JS -->
+<script src="/static/js/jquery.nice-select.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="/static/js/owl.carousel.min.js"></script>
+<!-- Magnific Popup JS -->
+<script src="/static/js/jquery.magnific-popup.min.js"></script>
+<!-- Odometer JS -->
+<script src="/static/js/odometer.min.js"></script>
+<!-- Jquery Appear JS -->
+<script src="/static/js/jquery.appear.min.js"></script>
+<!-- Ajaxchimp JS -->
+<script src="/static/js/jquery.ajaxchimp.min.js"></script>
+<!-- Form Validator JS -->
+<script src="/static/js/form-validator.min.js"></script>
+<!-- Contact JS -->
+<script src="/static/js/contact-form-script.js"></script>
+<!-- Wow JS -->
+<script src="/static/js/wow.min.js"></script>
+<!-- Custom JS -->
+<script src="/static/js/main.js"></script>
+
+<iframe name="__privateStripeMetricsController7700" frameborder="0" allowtransparency="true" scrolling="no" allow="payment *" src="https://js.stripe.com/v3/m-outer-5c6dd788fb72c31ac4bf7f535c614d53.html#url=http%3A%2F%2Fdast4n.pythonanywhere.com%2Fru%2Fcontact%2F&amp;title=&amp;referrer=http%3A%2F%2Fdast4n.pythonanywhere.com%2Fru%2Fcontact%2F&amp;muid=831f43ff-75dd-4ad6-8732-805b1d65b52645ebd6&amp;sid=2d45b83b-220e-4989-8f75-e8a26303f6ea6410fe&amp;version=6&amp;preview=false" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><script src="https://yastatic.net/sovetnik/_/js/sovetnik.min.js?mbr=true&amp;settings=%7B%22clid%22%3A%222288281%22%2C%22affId%22%3A%221%22%2C%22applicationName%22%3A%22%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%B0%20%D0%BE%D1%82%20%D0%B2%D0%B5%D0%B1-%D1%83%D0%B3%D1%80%D0%BE%D0%B7%20360%22%2C%22browser%22%3A%22chrome%22%2C%22extensionStorage%22%3Atrue%2C%22notificationStatus%22%3A%22chrome%22%2C%22notificationPermissionGranted%22%3Afalse%7D" type="text/javascript" charset="UTF-8"></script></body></html>

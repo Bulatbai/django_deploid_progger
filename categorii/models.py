@@ -43,3 +43,8 @@ class Comments(models.Model):
        text = models.TextField(verbose_name='coments')
        created_date = models.DateTimeField(auto_now_add=True)
         
+
+
+
+
+ 

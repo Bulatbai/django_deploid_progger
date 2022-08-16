@@ -9,8 +9,8 @@ urlpatterns = [
       path('shop/create/',views.Create_plase, name='create-place'),
       path('shop/<int:id>/', views.detail_post, name='place'),
       path('shop/<int:id>/edit/', views.edit_place, name='edit-place'),
-      path('by/', views.product_detail, name='product'),
       path('<int:id>/delete/', views.delete_place, name='del_place' ),
+     
 
 
 #       path('feed/', Feedbackcreate.as_view(), name='Feedback'),

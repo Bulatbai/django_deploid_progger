@@ -3,3 +3,14 @@
 <a class='btn btn-olg btn-warning' href="{% url 'edit-place' postingo.id %}">изменить</a>
 <a class='btn btn-olg btn-danger' href="{% url 'del_place' postingo.id %}">Удалить</a>
 <hr> {% endcomment %}
+curl https://api.stripe.com/v1/checkout/sessions \
+  -u sk_test_51LVvHMJogh7JOOHaNhRKyVYZiKrITQfmWUzji2XA3BoR6FUYe7ZFOCv3Xog7DBf3mhStYXWGST055guvK4o1RYmQ00Zo9Bwerg: \
+  -d "line_items[][name]"="Stainless Steel Water Bottle" \
+  -d "line_items[][amount]"=1000 \
+  -d "line_items[][currency]"="usd" \
+  -d "line_items[][quantity]"=1 \
+  -d "payment_intent_data[application_fee_amount]"=123 \
+  -d "mode"="payment" \
+  -d "success_url"="https://example.com/successhttps://example.com/success" \
+  -d "cancel_url"="https://example.com/cancelhttps://example.com/cancel" \
+  -H "Stripe-Account: {{CONNECTED_STRIPE_ACCOUNT_ID}}"

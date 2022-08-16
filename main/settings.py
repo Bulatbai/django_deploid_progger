@@ -124,6 +124,10 @@ STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+STRIPE_PUBLIC_KEY = "pk_test_51LVvHMJogh7JOOHawgZ92SURtyCh2sz4L4eBrURcGwqu1INAl6ssDjjwkWb0QKbObqfsPf0GMvFEKbjHZ8W2az0k007wizpH7S"
+
+STRIPE_PRIVATE_KEY = "sk_test_51LVvHMJogh7JOOHaNhRKyVYZiKrITQfmWUzji2XA3BoR6FUYe7ZFOCv3Xog7DBf3mhStYXWGST055guvK4o1RYmQ00Zo9Bwerg"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

@@ -2,15 +2,16 @@
 
 from dataclasses import fields
 from django import forms
-from .models import Post, Comments
+      
+from .models import Post, Comments 
 from django.contrib.auth.forms import UserCreationForm
-
+from random import randrange as rand_num
 from django.contrib.auth.models import User
 class Postforms(forms.ModelForm):
     
     class Meta:
         model = Post
-        fields = ['user','name', 'location', 'description', 'img','price']
+        fields = ['user','name', 'location', 'description', 'photo','img','price']
 
 
 
@@ -31,11 +32,7 @@ class LetRegisterform(forms.ModelForm):
         return cd['password2']
         
             
-# class CartAddProductForm(forms.ModelForm):
-#     class Meta:
-#         fields = ['name', 'price']
-
-
+ 
 
 PRODUCT_QUANTITY_CHOICES = [(i, str(i)) for i in range(1, 21)]
 
@@ -55,7 +52,5 @@ class Coment_Form(forms.ModelForm):
 
 
 
-# class Feedbaclform(forms.ModelForm):
-#     class Meta:
-#         model = Feedback
-#         fields = ['place', 'text']
+
+ 

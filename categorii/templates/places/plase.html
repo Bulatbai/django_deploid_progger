@@ -117,7 +117,13 @@
     </div>
 
        
-
+   
+ 
+    <a class='btn btn-olg btn-warning' href="{% url 'edit-place' postingo.id %}">изменить</a>
+    <a class='btn btn-olg btn-danger' href="{% url 'del_place' postingo.id %}">Удалить</a>
+    
+     
+    
 
        <p class="comment-form-comment">
         {% comment %} <textarea id="comment" class="form-control" name="comment" placeholder="Напишите свой отзыв*" cols="45" rows="4" required="">
@@ -132,8 +138,7 @@
       </p><p class="comment-form-author"><input id="author" name="author" type="text" class="form-control" value="" placeholder="Имя*" size="30" required=""></p> 
          
       
-        
-         
+ 
 
 
 

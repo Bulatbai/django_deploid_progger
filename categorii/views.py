@@ -1,8 +1,9 @@
 
 from django.contrib.auth import authenticate
 from django.shortcuts import render, redirect, HttpResponse,  get_object_or_404
+     
 from .forms import   Postforms,  Coment_Form, LetRegisterform, CartAddProductForm
-from .import models
+from .import models 
 from django.contrib.auth.mixins import    LoginRequiredMixin
 from .models import   Post, Comments, User  
 from django.views import View
@@ -11,6 +12,7 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.views.decorators.http import require_POST
 
+ 
 # # class Homeview(View):
 # #     def get(self, request, *args, **kwargs):
 # #         return render(request, 'index.html')
@@ -29,8 +31,8 @@ def autenticate(request):
 
 
 def kontact(request):
-    user_don = Post.objects.all()
-    return render(request, 'kontact.html', {'post': user_don})
+    
+    return render(request, 'kontact.html' )
 
 
 
@@ -157,18 +159,6 @@ def regist(request):
         user_form = LetRegisterform()
      
     return render(request, 'registr.html', {'form': user_form})
-
-
-
-def product_detail(request):
-    return render(request, 'detail.html')
-
-
-
-
-
-
-
 
 
  

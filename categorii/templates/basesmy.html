@@ -1888,6 +1888,43 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         </div>
     
   
+
+        
+
+    <header class="top-area ">
+      <!-- Top Header -->
+                                  <div class="top-bar template-color-bg">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-6 col-md-6">
+                              <div class="call-to-action">
+                               <p><i class="icofont-envelope"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Эл. адрес:</font></font><a href="mailto:billivonidirom@gmail.com"><font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">привет@gmail.com</font></font></a></p>
+                                  
+                                <p><i class="icofont-phone"></i><font style="vertical-align: inherit;">
+                                  <font style="vertical-align: inherit;">Телефон:</font></font><a href="tel:+44%20587%20154756"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">+44 587 154756</font></font></a></p>
+                                  <a href="/re/" class="twitter">Зарегестрироваться<i class="fa fa-twitter"></i></a>
+                                </div>
+                          </div>
+
+                          <div class="col-lg-6 col-md-6">
+                           <ul class="top-social">
+                  <li>
+                      
+                 </li>
+          
+ 
+          
+          
+            </ul>
+          
+              </div>
+                  </div>
+                  </div>
+                  
+              </div>
+            
+          
   
   
   
@@ -1900,10 +1937,12 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
               <ul>
                   <li><a href="#logo">Главная</a></li>
                   <li><a href="#about">О компании</a></li>
-                  <li><a href="#portfolio">Портфолио</a></li>
+                  
+                  <li><a href="/admin/categorii/post/">Портфолио</a></li>
+                 
                   <li><a href="#services">Услуги</a></li>
                   <li><a href="#gallery">Галерея</a></li>
-                  <li><a href="#contact">Контакты</a></li>
+                  <li><a href="/kontact/">Контакты</a></li>
                   <li><div class="header__cart cart"  tabindex="0">
                     <div class="cart__text" >
                       Корзина
@@ -1916,7 +1955,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                       <div class="cart-content__bottom">
                         <div class="cart-content__fullprice">
                           <span>Итого:</span>
-                          <span class="fullprice">568 789 ₽</span>
+                          <span class="fullprice">568 789 $</span>
                         </div>
                         <button class="cart-content__btn btn" data-graph-path="modal" data-graph-animation="fadeInUp">Перейти в корзину</button>
                       </div>
@@ -1976,7 +2015,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                     </div>
                     <div class="order-modal__info">
                         <div class="order-modal__quantity order-modal__info-item">Товаров в заказе: <span>3 шт</span></div>
-                        <div class="order-modal__summ order-modal__info-item">Общая сумма заказа: <span>568 789 ₽</span></div>
+                        <div class="order-modal__summ order-modal__info-item">Общая сумма заказа: <span>568 789 $</span></div>
                         <div class="order-modal__products order-modal__info-item">
                             <button class="order-modal__btn">Состав заказа</button>
                             <ul class="order-modal__list">
@@ -1989,9 +2028,11 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                             </ul>
                         </div>
                     </div>
-                    <form action="#" class="order-modal__form order">
+                      <form  class="order-modal__form order">  
+                      <div   class="order-modal__form order">
+                      
                         <input type="hidden" name="theme" value="Обратный звонок">
-                        <input type="hidden" name="admin_email[]" value="maxgraph23@gmail.com">
+                        <input type="hidden" name="admin_email[]" required="" value="maxgraph23@gmail.com">
                         <input type="hidden" name="form_subject" value="Заявка с сайта Сайт">
                         <label class="order__label">
                             <span class="order__text">Ваше имя</span>
@@ -1999,25 +2040,46 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                         </label>
                         <label class="order__label">
                             <span class="order__text">Номер телефона</span>
-                            <input type="tel" name="Телефон" class="order__input" placeholder="+7 (___)___-__-__">
+                            <input type="tel" name="Телефон" required="" class="order__input" placeholder="+7 (___)___-__-__">
                         </label>
                         <label class="order__label">
                             <span class="order__text">Ваше имя</span>
-                            <input type="email" name="Email" class="order__input" placeholder="post@gmail.com">
+                            <input type="email" name="Email" required="" class="order__input" placeholder="post@gmail.com">
                         </label>
-                        <button class="order__btn btn">Оформить заказ</button>
-                    </form>
+                        
+                             <button id="checkout" class="order__btn btn"><a href="https://buy.stripe.com/test_eVa4gO8OHemg8tG5kl"> Оформить заказ  </a></button>
+                      </div>
+                      
+                     </form>   
                 </div>
             </div>
         </div>
+         
+      {% comment %} <script>
+      var stripe = Stripe(
+        "pk_test_51LVvHMJogh7JOOHawgZ92SURtyCh2sz4L4eBrURcGwqu1INAl6ssDjjwkWb0QKbObqfsPf0GMvFEKbjHZ8W2az0k007wizpH7S"
+      );
+document.getElementById("checkout").addEventListener("click", function(){
+  stripe.redirectToCheckout({
+    lineItems: [
+    {
+      price:  "order-modal__form order"
+      quantity: 1,
 
+    },
+    ],
+    mode: "subcription"
+    successUrl: "https:/www.google.com/"
+    canseUrl: "https:/www.twitter.com/"
+  }).then(function(rezult){
  
- 
+  });
+})
+      </script>
+       {% endcomment %}
+         
+       
 
-
-
-
- 
 
 	<main class="content">
 		<div class="container">
@@ -2027,7 +2089,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
       
 					<div class="filters__item filters-price">
-						<h3 class="filters-price__title">Цена</h3>
+						{% comment %} <h3 class="filters-price__title">Цена</h3>
             
 
 						<div class="filters-price__slider"></div>
@@ -2035,13 +2097,14 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 						  <input type="text" class="filters-price__input">
 							<input type="text" class="filters-price__input">
           
-              
-              <button class="cart-content__btn btn" data-graph-path="modal" data-graph-animation="fadeInUp">Перейти в корзину</button>
-						</div>
+               {% endcomment %}
+              {% comment %} <button class="cart-content__btn btn" data-graph-path="modal" data-graph-animation="fadeInUp">Перейти в корзину</button> {% endcomment %}
+					
+            </div>
 					</div>
 				</div>  
                   
-
+      
     
 
 
@@ -2052,7 +2115,9 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 							<a href="#" class="product__image">
 								<div class="product__switch image-switch">
 									<div class="image-switch__item">
-										<div class="image-switch__img"><img src="{{i.img.url}}" alt="Макбук"></div>
+										<div class="image-switch__img">
+                      {%if i.img %}<img src="{{i.img.url}}" alt="Макбук">
+                    {%endif%}</div>
 									</div>
                   
 									<div class="image-switch__item">
@@ -2263,6 +2328,35 @@ var wc_cart_fragments_params = {"ajax_url":"\/fodia\/wp-admin\/admin-ajax.php","
 <script src="https://themes.envytheme.com/fodia/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.5.1" id="wc-cart-fragments-js"></script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" width="20" height="20" alt="Google Переводчик"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Исходный текст</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Предложить лучший вариант перевода</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
 <div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><style type="text/css">.typewrite > .wrap { border-right: 0.08em solid #fff}</style>
    
+
+
+
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+
+  const buy_now_button = document.querySelector('#buy_now_btn')
+
+  buy_now_button.addEventListener('click', event => {   
+    fetch('/checkout/')
+    .then((result) => { return result.json() })
+    .then((data) => {
+      var stripe = Stripe(data.stripe_public_key);
+
+      stripe.redirectToCheckout({
+      // Make the id field from the Checkout Session creation API response
+      // available to this file, so you can provide it as parameter here
+      // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+        sessionId: data.session_id
+      }).then(function (result) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer
+        // using `result.error.message`.
+      });
+    }) 
+  })
+</script>
 <script>
     
   
