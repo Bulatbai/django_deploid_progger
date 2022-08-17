@@ -16,3 +16,4 @@ stripe==4.0.2
 tzdata==2022.1
 urllib3==1.26.11
 Werkzeug==2.2.2
+gunicorn
