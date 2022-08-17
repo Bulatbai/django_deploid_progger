@@ -3,9 +3,12 @@
 <hr>
 	<div class="container">
 		<form method="POST">
-			 {% csrf_token %}
+			{% if user.is_authenticated%}
+			<h2>вы заргестрированы</h2>
+			 {% else %}
+			  {% csrf_token %}
 			 {{ form.as_p }}
-			
+			{%endif%}
 			 <button type="submit" name="submit" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">save</font></font></button>
 		 
 		</form>
