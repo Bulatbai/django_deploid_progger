@@ -1,21 +1,7 @@
 {% extends 'basesmy.html'%}
 
 {% block main%}
-{% comment %} <hr>
-<form method="POST">
-  <div class="container">
-    {% csrf_token %}
-    {{  coment.as_p }}
-    <button id='2003'>Отправить комментарии</button>
-</div>
-</form>
-
-{% for il in com%}
-{% if il.comments%}
-<li>{{il.comments}}</li>
-{% endif%}
- {% endfor %}  {% endcomment %}
-
+ 
 
 {% endblock main%}
 
