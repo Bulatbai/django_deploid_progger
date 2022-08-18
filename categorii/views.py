@@ -39,7 +39,7 @@ def kontact(request):
  
 def PLaces(request):
     user_don = Post.objects.all()
-    return render(request, 'main.html', {'post': user_don})
+    return render(request, 'basesmy.html', {'post': user_don})
 
 
  
