@@ -9,7 +9,7 @@ from .models import   Post, Comments, User
 from django.views import View
 from django.views.generic import TemplateView, FormView, DeleteView, CreateView
 from django.core.paginator import Paginator
-from django.http import HttpResponse, HttpResponseNotFound, Http404
+# from django.http import HttpResponse, HttpResponseNotFound   
 from django.views.decorators.http import require_POST
 
  
