@@ -1,5 +1,5 @@
 
-{% extends 'inner.html' %}
+{% extends 'basesmy.html' %}
        {% block  pages%}
 
        <link rel="stylesheet" href="static/libs/modal/modal.css">
@@ -40,7 +40,9 @@
 <input type="number" id="quantity_62d161d77f6c5" class="input-text qty text" step="1" min="1" max="" name="quantity" value="1" title="Кол-во" size="4" placeholder="" inputmode="numeric" autocomplete="off">
   </div>
 
- 
+   {% comment %} <button type="submit" name="add-to-cart" value="385" class="single_add_to_cart_button button alt"> {% endcomment %}
+    {% comment %} <button type="submit" name="add-to-cart" value="385" class="single_add_to_cart_button button alt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Добавить в корзину</font></font></button> 
+  {% endcomment %}
   </form>
 
 
@@ -100,13 +102,15 @@
 			<div id="review_form_wrapper">
 			<div id="review_form">
 					<div id="respond" class="comment-respond">
-		<span id="reply-title" class="comment-reply-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Будьте первым, кто оставил отзыв на {{postingo.name}}</font></font><small><a rel="nofollow" id="cancel-comment-reply-link" href="/fodia/product/fresh-banana/#respond" style="display:none;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">отменить ответ</font></font></a></small></span><form action="" method="post" id="commentform" class="comment-form" novalidate=""><p class="comment-notes"><span id="email-notes"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ваш электронный адрес не будет опубликован. </font></font></span> <span class="required-field-message" aria-hidden="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Обязательные поля отмечены </font></font><span class="required" aria-hidden="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></span></span></p><div class="comment-form-rating"><label for="rating"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оцените этот товар</font></font></label><p class="stars">						<span>							<a class="star-1" href="#"><font style="vertical-align: inherit;">1</font></a>							<a class="star-2" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2</font></font></a>							<a class="star-3" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></a>							<a class="star-4" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></a>							<a class="star-5" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></a>						</span>					</p><select name="rating" id="rating" required="" style="display: none;">
+		<span id="reply-title" class="comment-reply-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Будьте первым, кто оставил отзыв на {{postingo.name}}</font></font><small><a rel="nofollow" id="cancel-comment-reply-link" href="/fodia/product/fresh-banana/#respond" style="display:none;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">отменить ответ</font></font></a></small></span><form action="" method="post" id="commentform" class="comment-form" novalidate=""><p class="comment-notes"><span id="email-notes"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ваш электронный адрес не будет опубликован. </font></font></span> <span class="required-field-message" aria-hidden="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Обязательные поля отмечены </font></font><span class="required" aria-hidden="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></span></span></p>
+{% comment %}       
+      <div class="comment-form-rating"><label for="rating"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оцените этот товар</font></font></label><p class="stars">						<span>							<a class="star-1" href="#"><font style="vertical-align: inherit;">1</font></a>							<a class="star-2" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2</font></font></a>							<a class="star-3" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></a>							<a class="star-4" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></a>							<a class="star-5" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></a>						</span>					</p><select name="rating" id="rating" required="" style="display: none;">
 						<option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оценивать…</font></font></option>
 						<option value="5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Идеальный</font></font></option>
 						<option value="4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Хороший</font></font></option>
 						<option value="3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Средний</font></font></option>
 						<option value="2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Не так уж плохо</font></font></option>
-						<option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Очень бедный</font></font></option>
+						<option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Очень бедный</font></font></option> {% endcomment %}
 			 </select></div>
 
 
@@ -126,12 +130,14 @@
     
 
        <p class="comment-form-comment">
-     
+        {% comment %} <textarea id="comment" class="form-control" name="comment" placeholder="Напишите свой отзыв*" cols="45" rows="4" required="">
+
+        </textarea> {% endcomment %}
             <div class="container">
             
             {% csrf_token %}
             {{  coment.as_p }}
-         
+            {% comment %} <button id='2003'>Отправить комментарии</button> {% endcomment %}
         </div>
       </p><p class="comment-form-author"><input id="author" name="author" type="text" class="form-control" value="" placeholder="Имя*" size="30" required=""></p> 
          
@@ -158,6 +164,8 @@
 			</div>
 			</div>
    
+
+
 
 
 
@@ -237,7 +245,275 @@
 <script src="https://themes.envytheme.com/fodia/wp-includes/js/comment-reply.min.js?ver=6.0.1" id="comment-reply-js"></script>
  
 
+{% comment %} 
+ <script src="static/js/simplebar.js"></script>
+<script src="static/libs/modal/modal.js"></script>
+<script src="static/js/product.js"></script>
+<script src="static/js/fixed-block.js"></script>
+<script src="static/js/cart.js"></script>         
+
+  {% endcomment %}
+  {% comment %} <script>
+    
+document.addEventListener('DOMContentLoaded', () => {
+  const productsBtn = document.querySelectorAll('.product__btn');
+  const cartProductsList = document.querySelector('.cart-content__list');
+  const cart = document.querySelector('.cart');
+  const cartQuantity = cart.querySelector('.cart__quantity');
+  const fullPrice = document.querySelector('.fullprice');
+  const orderModalOpenProd = document.querySelector('.order-modal__btn');
+  const orderModalList = document.querySelector('.order-modal__list');
+  let price = 0;
+  let randomId = 0;
+  let productArray = [];
+
+  const priceWithoutSpaces = (str) => {
+    return str.replace(/\s/g, '');
+  };
+
+  const normalPrice = (str) => {
+    return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+  };
+
+  const plusFullPrice = (currentPrice) => {
+    return price += currentPrice;
+  };
+
+  const minusFullPrice = (currentPrice) => {
+    return price -= currentPrice;
+  };
+
+  const printQuantity = () => {
+    let productsListLength = cartProductsList.querySelector('.simplebar-content').children.length;
+    cartQuantity.textContent = productsListLength;
+    productsListLength > 0 ? cart.classList.add('active') : cart.classList.remove('active');
+  };
+
+  const printFullPrice = () => {
+    fullPrice.textContent = `${normalPrice(price)} ₽`;
+  };
+
+  const generateCartProduct = (img, title, price, id) => {
+    return `
+      <li class="cart-content__item">
+        <article class="cart-content__product cart-product" data-id="${id}">
+          <img src="${img}" alt="" class="cart-product__img">
+          <div class="cart-product__text">
+            <h3 class="cart-product__title">${title}</h3>
+            <span class="cart-product__price">${normalPrice(price)}</span>
+          </div>
+          <button class="cart-product__delete" aria-label="Удалить товар"></button>
+        </article>
+      </li>
+    `;
+  };
+
+  const deleteProducts = (productParent) => {
+    let id = productParent.querySelector('.cart-product').dataset.id;
+    document.querySelector(`.product[data-id="${id}"]`).querySelector('.product__btn').disabled = false;
+    
+    let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.cart-product__price').textContent));
+    minusFullPrice(currentPrice);
+    printFullPrice();
+    productParent.remove();
+
+    printQuantity();
+
+    updateStorage();
+  };
+
+  productsBtn.forEach(el => {
+    
+    el.closest('.product').setAttribute('data-id', randomId++);
+
+    el.addEventListener('click', (e) => {
+      let self = e.currentTarget;
+      let parent = self.closest('.product');
+      let id = parent.dataset.id;
+      let img = parent.querySelector('.image-switch__img img').getAttribute('src');
+      let title = parent.querySelector('.product__title').textContent;
+      let priceString = priceWithoutSpaces(parent.querySelector('.product-price__current').textContent);
+      let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.product-price__current').textContent));
+
+      plusFullPrice(priceNumber);
+
+      printFullPrice();
+
+      cartProductsList.querySelector('.simplebar-content').insertAdjacentHTML('afterbegin', generateCartProduct(img, title, priceString, id));
+      printQuantity();
+
+
+      updateStorage();
+      
+      self.disabled = true;
+    });
+  });
+
+  cartProductsList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('cart-product__delete')) {
+      deleteProducts(e.target.closest('.cart-content__item'));
+    }
+  });
+
+  let flag = 0;
+  orderModalOpenProd.addEventListener('click', (e) => {
+    if (flag == 0) {
+      orderModalOpenProd.classList.add('open');
+      orderModalList.style.display = 'block';
+      flag = 1;
+    } else {
+      orderModalOpenProd.classList.remove('open');
+      orderModalList.style.display = 'none';
+      flag = 0;
+    }
+  });
+
+  const generateModalProduct = (img, title, price, id) => {
+    return `
+      <li class="order-modal__item">
+        <article class="order-modal__product order-product" data-id="${id}">
+          <img src="${img}" alt="" class="order-product__img">
+          <div class="order-product__text">
+            <h3 class="order-product__title">${title}</h3>
+            <span class="order-product__price">${normalPrice(price)}</span>
+          </div>
+          <button class="order-product__delete">Удалить</button>
+        </article>
+      </li>
+    `;
+  };
+
+  const modal = new GraphModal({
+    isOpen: (modal) => {
+      console.log('opened');
+      let array = cartProductsList.querySelector('.simplebar-content').children;
+      let fullprice = fullPrice.textContent;
+      let length = array.length;
+
+      document.querySelector('.order-modal__quantity span').textContent = `${length} шт`;
+      document.querySelector('.order-modal__summ span').textContent = `${fullprice}`;
+      for (item of array) {
+        console.log(item)
+        let img = item.querySelector('.cart-product__img').getAttribute('src');
+        let title = item.querySelector('.cart-product__title').textContent;
+        let priceString = priceWithoutSpaces(item.querySelector('.cart-product__price').textContent);
+        let id = item.querySelector('.cart-product').dataset.id;
+
+        orderModalList.insertAdjacentHTML('afterbegin', generateModalProduct(img, title, priceString, id));
+
+        let obj = {};
+        obj.title = title;
+        obj.price = priceString;
+        productArray.push(obj);
+      }
+
+      console.log(productArray)
+    },
+    isClose: () => {
+      console.log('closed');
+    }
+  });
+
+  document.querySelector('.order').addEventListener('submit', (e) => {
+    e.preventDefault();
+    let self = e.currentTarget;
+
+    let formData = new FormData(self);
+    let name = self.querySelector('[name="Имя"]').value;
+    let tel = self.querySelector('[name="Телефон"]').value;
+    let mail = self.querySelector('[name="Email"]').value;
+    formData.append('Товары', JSON.stringify(productArray));
+    formData.append('Имя', name);
+    formData.append('Телефон', tel);
+    formData.append('Email', mail);
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          console.log('Отправлено');
+        }
+      }
+    }
+
+    xhr.open('POST', 'mail.php', true);
+    xhr.send(formData);
+
+    self.reset();
+  });
+
+
+  const countSumm = () => {
+    document.querySelectorAll('.cart-content__item').forEach(el => {
+      price += parseInt(priceWithoutSpaces(el.querySelector('.cart-product__price').textContent));
+    });
+  };
+
+  const initialState = () => {
+    if (localStorage.getItem('products') !== null) {
+      cartProductsList.querySelector('.simplebar-content').innerHTML = localStorage.getItem('products');
+      printQuantity();
+      countSumm();
+      printFullPrice();
+
+
+      document.querySelectorAll('.cart-content__product').forEach(el => {
+        let id = el.dataset.id;
+        console.log(id)
+        document.querySelector(`.product[data-id="${id}"]`).querySelector('.product__btn').disabled = true;
+      });
+    }
+  };
+
+  initialState();
+
+  const updateStorage = () => {
+    let parent = cartProductsList.querySelector('.simplebar-content');
+    let html = parent.innerHTML;
+    html = html.trim();
+
+    if (html.length) {
+      localStorage.setItem('products', html);
+    } else {
+      localStorage.removeItem('products');
+    }
+  };
+
+  document.querySelector('.modal').addEventListener('click', (e) => {
+    if (e.target.classList.contains('order-product__delete')) {
+      let id = e.target.closest('.order-modal__product').dataset.id;
+      let cartProduct = document.querySelector(`.cart-content__product[data-id="${id}"]`).closest('.cart-content__item');
+      deleteProducts(cartProduct)
+      e.target.closest('.order-modal__product').remove();
+    }
+  });
+
+});
+
+
+
+
+
+
  
+
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+  navbar.classList.add("sticky")
+  } else {
+  navbar.classList.remove("sticky");
+  }
+}
+ 
+</script> {% endcomment %}
+
 
 
 <script>
