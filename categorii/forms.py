@@ -3,7 +3,7 @@
 from dataclasses import fields
 from django import forms
       
-from .models import Post, Comments 
+from .models import Post, Comments, Image
 from django.contrib.auth.forms import UserCreationForm
 from random import randrange as rand_num
 from django.contrib.auth.models import User
@@ -11,11 +11,15 @@ class Postforms(forms.ModelForm):
     
     class Meta:
         model = Post
-        fields = ['user','name', 'location', 'description', 'photo','img','price']
+        fields = ['user','name', 'location', 'description', 'amount_p','price']
+        
 
 
-
-
+class ImageForm(forms.ModelForm):
+    """Form for the image model"""
+    class Meta:
+        model = Image
+        fields = ('title', 'image','description', 'amount_p','price' )
 
 class LetRegisterform(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)

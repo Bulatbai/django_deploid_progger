@@ -13,11 +13,14 @@
 {% block page%}
 
 <hr>
-<div class="container">
+<div class="container" enctype="multipart/form-data">
 <form method="POST">
-     {% csrf_token %}
-     {{ place_form.as_p }}
-    
+    {% csrf_token %}
+    {{ form.as_p }}
+
+     {% comment %} {% csrf_token %} {% endcomment %}
+     {% comment %} {{ form.as_p }} {% endcomment %}
+   
      <button type="submit" name="submit" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">save</font></font></button>
  
 </form>

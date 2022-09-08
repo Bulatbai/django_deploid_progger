@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'categorii',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,9 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
 
 STRIPE_PUBLIC_KEY = "pk_test_51LVvHMJogh7JOOHawgZ92SURtyCh2sz4L4eBrURcGwqu1INAl6ssDjjwkWb0QKbObqfsPf0GMvFEKbjHZ8W2az0k007wizpH7S"
 

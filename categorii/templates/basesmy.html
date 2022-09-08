@@ -6,10 +6,13 @@
 	<title>shop card</title>
 	 <link rel="stylesheet" href="static/libs/modal/modal.css">
 	<link rel="stylesheet" href="static/css/style.css">
+ {% comment %} <link rel="shortcut icon" href="static/img/main.ico" type="image/x-icon"/> {% endcomment %}
  
+    <style>
+
  
 
-    <style>
+      
  
       html {
         box-sizing: border-box;
@@ -1827,8 +1830,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
        
 </style>
-
-<link rel="stylesheet" id="fodia-responsive-css" href="https://themes.envytheme.com/fodia/wp-content/themes/fodia/assets/css/responsive.css?ver=1657870098" type="text/css" media="all">
+ <link rel="stylesheet" id="fodia-responsive-css" href="https://themes.envytheme.com/fodia/wp-content/themes/fodia/assets/css/responsive.css?ver=1657870098" type="text/css" media="all">
 <link rel="stylesheet" id="fodia-woocommerce-css" href="https://themes.envytheme.com/fodia/wp-content/themes/fodia/assets/css/woocommerce.css?ver=6.0.1" type="text/css" media="all">
 <link rel="stylesheet" id="fodia-fonts-css" href="//fonts.googleapis.com/css?family=Josefin+Sans%3A100%2C100i%2C300%2C300i%2C400%2C400i%2C600%2C600i%2C700%2C700i&amp;ver=1.0.0" type="text/css" media="screen">
 <link rel="stylesheet" id="newsletter-css" href="https://themes.envytheme.com/fodia/wp-content/plugins/newsletter/style.css?ver=7.4.6" type="text/css" media="all">
@@ -1846,22 +1848,24 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <meta name="generator" content="WordPress 6.0.1">
 <meta name="generator" content="WooCommerce 6.5.1">
 	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-	<link rel="icon" href="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png" sizes="32x32">
+	{% comment %} <link rel="icon" href="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png" sizes="32x32">
 <link rel="icon" href="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png" sizes="192x192">
-<link rel="apple-touch-icon" href="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png">
+<link rel="apple-touch-icon" href="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png">   {% endcomment %}
+<link   rel="icon" href="static/img/main.ico"  sizes="32x32">
 <meta name="msapplication-TileImage" content="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png">
 <style type="text/css" title="динамический CSS" class="options-output">body{font-family:"Josefin Sans";}body{font-size:15px;}.white-bg-navbar.navbar-expand-lg .navbar-nav .nav-item .nav-link, .transparent-navbar.navbar-expand-lg .navbar-nav .nav-item .nav-link{font-size:14px;}</style><link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css">
 
       </head>        
-<body>
+ <body>
+
+    
+ 
+
 
 
 
 
   
-
-
-
 
   <body class="archive post-type-archive post-type-archive-product theme-fodia woocommerce-shop woocommerce woocommerce-page woocommerce-js hfeed elementor-default elementor-kit-1 loaded" data-spy="scroll" data-offset="70">
 
@@ -1903,7 +1907,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                   
                                 <p><i class="icofont-phone"></i><font style="vertical-align: inherit;">
                                   <font style="vertical-align: inherit;">Телефон:</font></font><a href="tel:+44%20587%20154756"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">+44 587 154756</font></font></a></p>
-                                  <a href="/re/" class="twitter">Зарегестрироваться<i class="fa fa-twitter"></i></a>
+                                	{% if user.is_authenticated%}  <a href="/re/" class="twitter">Зарегестрироваться<i class="fa fa-twitter"></i></a>{%else%}
+                                  <h4> it my site</h4>{%endif%}
                                 </div>
                           </div>
 
@@ -1936,12 +1941,11 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
           <nav>
               <ul>
                   <li><a href="#logo">Главная</a></li>
-                  <li><a href="#about">О компании</a></li>
+                
                   
                   <li><a href="/admin/categorii/post/">Портфолио</a></li>
                  
-                  <li><a href="#services">Услуги</a></li>
-                  <li><a href="#gallery">Галерея</a></li>
+                 
                   <li><a href="/kontact/">Контакты</a></li>
                   <li><div class="header__cart cart"  tabindex="0">
                     <div class="cart__text" >
@@ -2076,15 +2080,23 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 				<ul class="products-grid">  
-                    {%for i in post %}
+                    {%for i in imgs %}
 					<li class="products-grid__item">
 						<article class="product">
 							<a href="#" class="product__image">
 								<div class="product__switch image-switch">
 									<div class="image-switch__item">
 										<div class="image-switch__img">
-                      {%if i.img %}<img src="{{i.img.url}}" alt="Макбук">
-                    {%endif%}</div>
+                   
+                        {%if i.image%}
+                    <img class="card-img my-2" src="{{ i.image.url }}">
+                    {%else%}
+                    <img class="card-img my-2" src="static/img/macbook-2.jpg">
+                    {%endif%}
+                     
+                  
+                 
+                  </div>
 									</div>
                   
 									<div class="image-switch__item">
@@ -2099,7 +2111,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 								<ul class="product__image-pagination image-pagination" aria-hidden="true"></ul>
 							</a>
 							<h3 class="product__title">
-								<a class="d-block" href="{% url 'place' i.id %}"><h3>{{i.name}}</h3></a>
+								<a class="d-block" href="{% url 'place' i.id %}"><h3>{{i.title}}</h3></a>
 							</h3>
 							<div class="product__props">
 								<span class="product__rating">
@@ -2113,7 +2125,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 							</div>
 							<div class="product__info">
 								<span class="product__term">Артикул: 879876</span>
-								<span class="product__available">В наличии: {{i.amount}} шт</span>
+								<span class="product__available">В наличии: {{i.amount_p}} шт</span>
 							</div>
 							<div class="product__price product-price">
 								<span class="product-price__current"> {{i.price}}$</span>
@@ -2254,7 +2266,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <script src="static/libs/modal/modal.js"></script>
 <script src="static/js/product.js"></script>
 <script src="static/js/fixed-block.js"></script>
-<script src="static/js/cart.js"></script>    
+{% comment %} <script src="static/js/cart.js"></script>     {% endcomment %}
 
       <div class="go-top" style="display: block;"><i class="icofont-fork-and-knife"></i></div>
 	<script type="text/javascript">
@@ -2300,7 +2312,7 @@ var wc_cart_fragments_params = {"ajax_url":"\/fodia\/wp-admin\/admin-ajax.php","
 
 
 <script src="https://js.stripe.com/v3/"></script>
-{% comment %} 
+
 <script>
 
   const buy_now_button = document.querySelector('#buy_now_btn')
@@ -2847,7 +2859,7 @@ var wc_cart_fragments_params = {"ajax_url":"\/fodia\/wp-admin\/admin-ajax.php","
       document.body.style.paddingRight = '0px';
     }
   }
-  </script>     {% endcomment %}
+  </script>    
  
 
 

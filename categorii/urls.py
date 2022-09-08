@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+     
+   
       path('', views.PLaces, name='placesy'),
       path('re/', views.regist,  name='reg'),
       path('kontact/', views.kontact, name='kontact-htmm' ),

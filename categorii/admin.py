@@ -1,14 +1,14 @@
 from django.contrib import admin
-from .models import Post,   Comments
-
+from .models import Post,   Comments, Image
+admin.site.register(Image)
 admin.site.register(Post)
 
 
 
 admin.site.register(Comments)
 
-
-# class Feedbackadmin(admin.ModelAdmin):
+    
+# class Feedbackadmin(admin.ModelAdmin):  
 #     list_display = ['text','place', 'user','id']
 #     list_editable = ['id']
 #     list_filter = ['id']

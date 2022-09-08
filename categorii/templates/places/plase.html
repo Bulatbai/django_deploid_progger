@@ -1,13 +1,6 @@
-
-{% extends 'basesmy.html' %}
-       {% block  pages%}
-
-       <link rel="stylesheet" href="static/libs/modal/modal.css">
-       <link rel="stylesheet" href="static/css/style.css">
-      
-     
  
-      
+       {% extends 'basesmy.html' %}
+       {% block  pages%}
          
  <div class="container"><h2> вы смторите характеристики</h2></div>
        
@@ -18,16 +11,24 @@
       </div>
      
       
+{%if  postingo.image %}
+ 
+
+
+
 
   <div id="product-385" class="product type-product post-385 status-publish first instock product_cat-cake product_cat-fruit product_cat-vegetable product_tag-fruits has-post-thumbnail shipping-taxable purchasable product-type-simple">
-    <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4" style="opacity: 1; transition: opacity 0.25s ease-in-out 0s;"><a href="#" class="woocommerce-product-gallery__trigger"><img draggable="false" role="img" class="emoji" alt="🔍" src="{{postingo.img.url }}"></a>
+    <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4" style="opacity: 1; transition: opacity 0.25s ease-in-out 0s;"><a href="#" class="woocommerce-product-gallery__trigger"><img draggable="false" role="img" class="emoji" alt="🔍" src="{{postingo.image.url }}"></a>
 <figure class="woocommerce-product-gallery__wrapper">
-<div data-thumb="https://themes.envytheme.com/fodia/wp-content/uploads/2020/09/banana-1-100x100.jpg" data-thumb-alt="" class="woocommerce-product-gallery__image" style="position: relative; overflow: hidden;"><a href="{{postingo.img.url }}"><img width="530" height="530" src="{{postingo.img.url }}" class="wp-post-image" alt="" loading="lazy" title="банан" data-caption="" data-src="{{postingo.img.url }}" data-large_image="https://themes.envytheme.com/fodia/wp-content/uploads/2020/09/banana-1.jpg" data-large_image_width="1500" data-large_image_height="1500" srcset="" sizes="(max-width: 530px) 100vw, 530px"></a><img role="presentation" alt="" src="https://themes.envytheme.com/fodia/wp-content/uploads/2020/09/banana-1.jpg" class="zoomImg" style="position: absolute; top: -560.881px; left: -881.343px; opacity: 0; width: 1500px; height: 1500px; border: none; max-width: none; max-height: none;"></div>	</figure>
-</div>
+<div data-thumb="https://themes.envytheme.com/fodia/wp-content/uploads/2020/09/banana-1-100x100.jpg" data-thumb-alt="" class="woocommerce-product-gallery__image" style="position: relative; overflow: hidden;"><a href="{{postingo.image.url }}"><img width="530" height="530" src="{{postingo.image.url }}" class="wp-post-image" alt="" loading="lazy" title="банан" data-caption="" data-src="{{postingo.image.url }}" data-large_image="https://themes.envytheme.com/fodia/wp-content/uploads/2020/09/banana-1.jpg" data-large_image_width="1500" data-large_image_height="1500" srcset="" sizes="(max-width: 530px) 100vw, 530px"></a><img role="presentation" alt="" src="https://themes.envytheme.com/fodia/wp-content/uploads/2020/09/banana-1.jpg" class="zoomImg" style="position: absolute; top: -560.881px; left: -881.343px; opacity: 0; width: 1500px; height: 1500px; border: none; max-width: none; max-height: none;"></div>	</figure>
+</div><h1> 
+{%else%}
 
+<h1>Your fogot post image</h1>
+{% endif%}
     <div class="summary entry-summary products-details">
       
-        <h3 class="product_title entry-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{postingo.name}}</font></font></h3><p class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$</font></font></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 50,00</font></font></bdi></span></p>
+        <h3 class="product_title entry-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{postingo.title}}</font></font></h3><p class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$</font></font></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 50,00</font></font></bdi></span></p>
 <div class="woocommerce-product-details__short-description">
 <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Labore et. </font><font style="vertical-align: inherit;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Labore et.</font></font></p>
 </div>
@@ -88,12 +89,12 @@
 		<h3 class="woocommerce-Reviews-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
 			Отзывы клиентов		</font></font></h3>
 
-					<p class="woocommerce-noreviews"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Отзывов пока нет.
+					<p class="woocommerce-noreviews"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.
              {% for il in com.all%}
 {% if il.text%}
 {% endif%}
 <li>{{il.text}}</li>
-<li>{{il.created_fate}}</li>
+<li>{{il.create_update}}</li>
 {% endfor %}   
   
           </font></font></p>
@@ -102,7 +103,7 @@
 			<div id="review_form_wrapper">
 			<div id="review_form">
 					<div id="respond" class="comment-respond">
-		<span id="reply-title" class="comment-reply-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Будьте первым, кто оставил отзыв на {{postingo.name}}</font></font><small><a rel="nofollow" id="cancel-comment-reply-link" href="/fodia/product/fresh-banana/#respond" style="display:none;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">отменить ответ</font></font></a></small></span><form action="" method="post" id="commentform" class="comment-form" novalidate=""><p class="comment-notes"><span id="email-notes"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ваш электронный адрес не будет опубликован. </font></font></span> <span class="required-field-message" aria-hidden="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Обязательные поля отмечены </font></font><span class="required" aria-hidden="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></span></span></p>
+		<span id="reply-title" class="comment-reply-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Будьте первым, кто оставил отзыв на {{postingo.title}}</font></font><small><a rel="nofollow" id="cancel-comment-reply-link" href="/fodia/product/fresh-banana/#respond" style="display:none;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">отменить ответ</font></font></a></small></span><form action="" method="post" id="commentform" class="comment-form" novalidate=""><p class="comment-notes"><span id="email-notes"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ваш электронный адрес не будет опубликован. </font></font></span> <span class="required-field-message" aria-hidden="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Обязательные поля отмечены </font></font><span class="required" aria-hidden="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></span></span></p>
 {% comment %}       
       <div class="comment-form-rating"><label for="rating"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оцените этот товар</font></font></label><p class="stars">						<span>							<a class="star-1" href="#"><font style="vertical-align: inherit;">1</font></a>							<a class="star-2" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2</font></font></a>							<a class="star-3" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></a>							<a class="star-4" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></a>							<a class="star-5" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></a>						</span>					</p><select name="rating" id="rating" required="" style="display: none;">
 						<option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оценивать…</font></font></option>
@@ -777,7 +778,4 @@ class GraphModal {
 </script>  
 
 {% endblock %}
-
-
-
-
+ 
